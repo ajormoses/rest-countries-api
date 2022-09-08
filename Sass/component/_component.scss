@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.wrapper {
+  width: 70%;
+  margin: auto;
+}
+
+body {
+  background: var(--Main-Background);
+
+  main {
+    header {
+      padding: 1.5rem 0.5rem;
+      background: var(--header-Mode-Background);
+      box-shadow: 0 0 7px hsl(209, 23%, 22%);
+      color: var(--header-Mode-text);
+      z-index: 2;
+      position: fixed;
+      width: 100%;
+
+      .header {
+        @extend %flexbox;
+        font-weight: 700;
+
+        .theme-mode {
+          cursor: pointer;
+          .light-mode {
+            @extend %flexbox;
+
+            & p {
+              margin-left: 0.5rem;
+            }
+
+            &.show {
+              display: none;
+            }
+          }
+
+          .dark-mode {
+            display: none;
+
+            & p {
+              margin-left: 0.5rem;
+            }
+
+            &.show {
+              @extend %flexbox;
+            }
+          }
+        }
+      }
+    }
+
+    section {
+      padding: 6rem 0 2rem;
+
+      .search-filter {
+        .search {
+          padding: 1.2rem 2rem;
+          border-radius: 0.5rem;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          background: var(--header-Mode-Background);
+          box-shadow: 0 0 2px hsl(209, 23%, 22%);
+          border: 1px solid hsl(209, 23%, 22%);
+          color: var(--header-Mode-text);
+
+          input {
+            margin-left: 1rem;
+            background: none;
+            width: 100%;
+            color: var(--header-Mode-text);
+
+            &::placeholder {
+              color: var(--header-Mode-text);
+              font-size: 0.7rem;
+            }
+          }
+        }
+
+        #filter {
+          margin: 2.5rem 0 0.5rem;
+          padding: 1rem;
+          background: var(--header-Mode-Background);
+          border: 1px solid hsl(209, 23%, 22%);
+          box-shadow: 0 0 2px hsl(209, 23%, 22%);
+          @extend %flexbox;
+          color: var(--header-Mode-text);
+          font-size: 0.8rem;
+          width: 11rem;
+          cursor: pointer;
+
+          .arrow.show {
+            transform: rotate(180deg);
+            transition: 0.4s ease-in-out;
+          }
+        }
+
+        .drop-down {
+          padding: 0.5rem 0;
+          color: var(--header-Mode-text);
+          font-size: 0.8rem;
+          line-height: 1.5rem;
+          background: var(--header-Mode-Background);
+          box-shadow: 0 0 2px hsl(209, 23%, 22%);
+          border: 1px solid hsl(209, 23%, 22%);
+          width: 11rem;
+          position: absolute;
+          display: none;
+
+          &.show {
+            display: block;
+          }
+        }
+
+        li {
+          padding: 0.5rem 1rem;
+        }
+
+        li:hover {
+          background: var(--Main-Background);
+        }
+      }
+
+      .countries {
+        padding: 2.5rem 0;
+        .country {
+          color: var(--header-Mode-text);
+          background: var(--header-Mode-Background);
+          border: 1px solid hsl(209, 23%, 22%);
+          box-shadow: 0 0 2px hsl(209, 23%, 22%);
+          padding-bottom: 2.5rem;
+          margin-bottom: 2rem;
+          height: 100%;
+          cursor: pointer;
+
+          .flag {
+            height: 50%;
+            border-bottom: 1px solid hsl(209, 23%, 22%);
+          }
+
+          &:hover {
+            transform: scale(1.07);
+          }
+
+          .name {
+            padding: 1rem 1.5rem;
+          }
+
+          div {
+            line-height: 1.7rem;
+            padding-left: 1.5rem;
+          }
+
+          .population,
+          .region,
+          .capital {
+            color: var(--Light-Mode-Input);
+          }
+        }
+      }
+
+      .back {
+        color: var(--header-Mode-text);
+
+        .country-flag {
+          margin: 2rem 0;
+          height: 100%;
+        }
+
+        .back-btn {
+          @extend %flexbox;
+          width: 6.5rem;
+          cursor: pointer;
+          padding: 0.5rem 1.2rem;
+          background: var(--header-Mode-Background);
+          box-shadow: 0 0 2px hsl(209, 23%, 22%);
+          color: var(--header-Mode-text);
+
+          i {
+            font-size: 1.2rem;
+          }
+        }
+
+        .country-name {
+          margin-bottom: 1rem;
+        }
+
+        .row-one,
+        .row-two {
+          line-height: 2rem;
+        }
+
+        .row-two {
+          margin: 1rem 0;
+        }
+
+        span {
+          color: var(--Light-Mode-Input);
+        }
+
+        .border {
+          .border-btns {
+            padding-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            align-items: center;
+
+            button {
+              padding: 0.5rem 1.2rem;
+              cursor: pointer;
+              background: var(--header-Mode-Background);
+              color: var(--Light-Mode-Input);
+              box-shadow: 0 0 2px hsl(209, 23%, 22%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 31.25rem) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .search-filter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .filter {
+      #filter {
+        margin: 0;
+        padding: 1.2rem 1rem;
+      }
+
+      .drop-down {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+  .countries-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 50rem) {
+  .countries-card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .back {
+    .wrap,
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .country-flag {
+      margin: 0;
+      height: 100%;
+    }
+
+    .back-btn {
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 62.5rem) {
+  .countries-card {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 87.5rem) {
+  .container,
+  .wrapper {
+    width: 80rem;
+  }
+
+  .countries-card {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

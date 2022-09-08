@@ -1,0 +1,12 @@
+:root {
+  --Main-Background: hsl(207, 26%, 17%);
+  --header-Mode-Background: hsl(209, 23%, 22%);
+  --header-Mode-text: hsl(0, 0%, 100%);
+  --Light-Mode-Input: hsl(0, 0%, 52%);
+}
+
+.dark-theme {
+  --Main-Background: hsl(0, 0%, 98%);
+  --header-Mode-Background: hsl(0, 0%, 100%);
+  --header-Mode-text: hsl(209, 23%, 22%);
+}

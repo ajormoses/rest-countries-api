@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+
+    <title>
+      Frontend Mentor(ajormoses) | rest-countries-api-with-color-theme-switcher
+    </title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="container">
+          <div class="header">
+            <p>Where in the world?</p>
+            <div class="theme-mode">
+              <div class="light-mode">
+                <i class="fa-solid fa-sun"></i>
+                <p>Light Mode</p>
+              </div>
+              <div class="dark-mode">
+                <i class="fa-solid fa-moon"></i>
+                <p>Dark Mode</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section>
+        <form class="search-filter">
+          <div class="container">
+            <div class="search-filter-content">
+              <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  aria-label="search"
+                  type="text"
+                  class="input"
+                  name="search"
+                  placeholder="Search for a country..."
+                />
+              </div>
+              <div class="filter">
+                <div id="filter">
+                  <p>Filter by Region</p>
+                  <i class="fa-solid fa-angle-down arrow"></i>
+                </div>
+                <ul class="drop-down">
+                  <li class="africa">Africa</li>
+                  <li class="america">America</li>
+                  <li class="asia">Asia</li>
+                  <li class="europe">Europe</li>
+                  <li class="oceania">Oceania</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </form>
+        <article class="countries">
+          <div class="wrapper">
+            <div class="countries-card">
+              <!-- Countries API goes here -->
+            </div>
+          </div>
+        </article>
+        <article class="back">
+          <div class="container">
+            <div class="countries-details">
+              <!-- Country Back button goes here -->
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
